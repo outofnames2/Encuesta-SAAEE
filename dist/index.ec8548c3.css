@@ -1,0 +1,147 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #101010;
+  color: #ffffff;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+  max-width: 1244px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+@media (min-width: 59em) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 300px 1fr auto;
+  background: #ffffff;
+  border-radius: 10px;
+  color: #101010;
+}
+@media (min-width: 34.375em) {
+  .card {
+    grid-template-columns: 300px repeat(2, 1fr);
+    grid-template-rows: 1fr auto;
+  }
+}
+@media (min-width: 59em) {
+  .card {
+    grid-template-columns: 170px repeat(2, 1fr);
+  }
+}
+.card__overlay {
+  display: none;
+}
+@media (min-width: 59em) {
+  .card__overlay {
+    position: relative;
+    opacity: 0;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    grid-column: 1/4;
+    grid-row: 1/3;
+    transition: opacity 200ms ease-in-out;
+  }
+}
+.card:hover .card__overlay {
+  opacity: 1;
+}
+.card__overlay span {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 2px solid #ffffff;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  font-weight: 700;
+}
+.card__image {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+@media (min-width: 34.375em) {
+  .card__image {
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+}
+.card__content {
+  grid-column: 1/3;
+  grid-row: 2/3;
+  padding: 1.3rem;
+}
+@media (min-width: 34.375em) {
+  .card__content {
+    grid-column: 2/4;
+    grid-row: 1/2;
+  }
+}
+.card__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+.card__description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+.card__date, .card__readtime {
+  grid-row: 3/4;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: grey;
+  line-height: 1;
+  padding-bottom: 1.5rem;
+}
+.card__date {
+  grid-column: 1/2;
+  padding-left: 1.5rem;
+}
+@media (min-width: 34.375em) {
+  .card__date {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+}
+.card__readtime {
+  grid-column: 2/3;
+  justify-self: end;
+  padding-right: 1.5rem;
+}
+@media (min-width: 34.375em) {
+  .card__readtime {
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+}
+/*# sourceMappingURL=index.ec8548c3.css.map */
