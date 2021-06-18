@@ -1,5 +1,6 @@
 $mid-screen: 34.375em;
-$big-screen: 59em
+$big-screen: 59em;
+$small-font: 1rem;
 
 ;html {
   font-size: 100%;
@@ -25,12 +26,25 @@ a, a:visited {
 }
 
 .intro {
+    padding: 1rem;
     &__header {
 	text-align: center;
     }
+    &__header  :first-child {
+	margin-bottom: 0;
+    }
     &__header > * + * {
 	color: grey;
+
     }
+    &__names {
+	margin: 0;
+	font-size: $small-font;
+    }
+    &__group_name {
+	margin-top: 0.3em;
+    }
+   
     &__desc {
 	display: flex;
 	justify-content: center;
@@ -40,19 +54,22 @@ a, a:visited {
     &__categories {
 	list-style: none;
         display: grid;
-	grid-template-rows: repeat(2,1fr);
-	grid-template-columns: repeat(2,1fr);
-	grid-gap: 1rem;
+	grid-template-rows: max-content max-content;
+	grid-template-columns: auto auto;
+	grid-row-gap: 1rem;
+	grid-column-gap: 2rem;
 
-	// background: teal;
 	margin: 0 auto;
 	padding: 1rem;
 	max-width: 900px;
-        & > * {
-	    font-size: 0.8em;
+        & > *{
+	    max-width: 400px;
+	    font-size: $small-font;
 	    color: grey;
-	    // background: pink;
-	} }
+	    
+	}
+    }
+    
 
 }
 
@@ -138,7 +155,7 @@ a, a:visited {
     }
 
     &__title {
-	font-size: 1.75rem;
+	font-size: 1.75em;
 	font-weight: 700;
 	line-height: 1.1;
 	margin-bottom: 0.75rem;
